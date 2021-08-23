@@ -20,7 +20,26 @@ const movieDB = {
         "Лига справедливости",
         "Ла-ла лэнд",
         "Одержимость",
-        "Скотт Пилигрим против..."
+        "Скотт Пилигрим против...",
+        "Бог грома"
     ]
 };
+
+const adv = document.querySelectorAll('.promo__adv img');
+adv.forEach(item => {
+ item.remove();
+});
+let genre = document.querySelector('.promo__genre');
+genre.innerHTML="ДРАМА";
+console.log(genre);
+let bg = document.querySelector('.promo__bg');
+bg.style.backgroundImage='url("img/bg.jpg")'; 
+let films = document.querySelector('.promo__interactive-list');
+movieDB.movies.sort();
+films.innerHTML='';
+movieDB.movies.forEach((item, i) => films.innerHTML+=`<li class="promo__interactive-item">${i+1} ${item}
+</div>
+</li>`);
+
+
 
